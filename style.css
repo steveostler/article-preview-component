@@ -1,0 +1,238 @@
+:root {
+    --very-dark-grayish-blue: hsl(217,19%,35%);
+    --desaturatd-dark-blue: hsl(214, 17%, 51%);
+    --grayish-blue: hsl(212, 23%, 69%);
+    --light-grayish-blue: hsl(210,46%,95%);
+
+}
+
+body{
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size:13px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 500;
+    background-color: var(--light-grayish-blue);
+    display: grid;
+    min-height: 100vh;
+    padding: 1.5rem;
+    text-align: left;
+    place-items: center
+    ;
+}
+
+main{
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 1rem;
+    display: grid;
+    position: relative;
+    box-shadow: 0 40px 40px -10px #c9d5e1;
+}
+
+.hero{
+    background-image: url("./images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 200px;
+    margin-bottom: 2.25rem;
+    border-radius: 1rem 1rem 0 0 ;
+}
+ .description{
+    padding:0 2rem;
+ }
+
+ .description .first{
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.2px;
+    color:var(--very-dark-grayish-blue);
+    margin-bottom: 0.75rem;
+ }
+
+ .description .second{
+    color:var(--desaturatd-dark-blue);
+    letter-spacing: 0.12px;
+ }
+
+ .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+ }
+
+ .profile img{
+    border-radius: 50%;
+    width: 2.5rem;
+ }
+ .profile span{
+    display: block;
+    color:var(--desaturatd-dark-blue);
+ }
+
+ .profile .share-icon {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--light-grayish-blue);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+ }
+
+ .profile .share-icon:hover{
+    background-color: var(--very-dark-grayish-blue);
+ }
+
+ .profile .share-icon img{
+    width: 15px;
+    height: 13px;
+ }
+
+ .share{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--very-dark-grayish-blue);
+   width: 100%;
+   position: absolute;
+   bottom: 0;
+   padding: 1.25rem 2rem 1.25rem 2rem;
+   border-radius: 0 0 1rem 1rem;
+   transform: translateY(100%);
+ }
+
+ .share .link{
+   display: flex;
+   align-items: center;
+ }
+
+ .share .link span{
+   text-transform: uppercase;
+   margin-right: 1.5rem;
+   line-height: 1.25rem;
+   letter-spacing: 5px;
+   color:var(--light-grayish-blue);
+ }
+
+ .share .link a{
+   margin-right: 1rem;
+ }
+
+ ion-icon{
+   color: #fff;
+   font-size: 1.25rem;
+ }
+
+ .share .share-icon {
+   border-radius: 50%;
+   width: 2rem;
+   height: 2rem;
+   background-color: var(--light-grayish-blue);
+   display: grid;
+   place-items: center;
+   cursor: pointer;
+}
+
+
+.slide-up{
+   animation: slide-up 0.3s cubic-bezier(0.23, 1, 0.320, 1) both;
+}
+
+@keyframes slide-up{
+   0%{
+      transform: translateY(100%);
+   }
+   100%{
+      transform: translateY(0%);
+   }
+}
+
+.slide-out{
+   animation:slide-out 0.3s cubic-bezier(0.23, 1, 0.320, 1)both;
+}
+
+@keyframes slide-out{
+   0%{
+      transform: translateY(0);
+      opacity: 1;
+   }
+   100%{
+      transform: translateY(100%);
+      opacity: 0;
+      z-index: -4;
+   }
+}
+
+ @media(min-width:880px){
+    main{
+        grid-template-columns: 285px auto;
+        grid-template-areas: 
+        "hero description"
+        "hero profile";
+        max-height: 280px;
+        max-width: 730px;
+    }
+
+    .hero{
+        grid-area: hero;
+        margin: 0;
+        border-radius: 1rem 0 0 1rem;
+        background-position: left;
+    }
+
+    .description{
+        grid-area: description;
+        padding:2rem 2.5rem 0 2.5rem;
+    }
+
+    .description .first{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .profile{
+        grid-area: profile;
+        padding: 1.25rem 2.5rem 2rem 2.5rem;
+    }
+
+    .share{
+      grid-area: footer;
+      place-content: center;
+      border-radius: 1rem;
+      width:248px;
+      padding: 1.25rem 2.25rem;
+      left: 70%;
+      bottom: 34%;
+      ;
+    }
+
+    .share::after{
+      content:"";
+      position: absolute;
+      margin-left: -10px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: var(--very-dark-grayish-blue) transparent transparent;
+      top: 100%;
+      left: 50%;
+    }
+
+    .share .share-icon{
+      display: none;
+    }
+
+
+ }
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
